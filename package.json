@@ -1,0 +1,17 @@
+{
+  "name": "chai-aur-backend",
+  "version": "1.0.0",
+  "description": "A file of backend from chaiaurbackend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx nodemon index.js"
+  },
+  "keywords": [
+    "youtube",
+    "backend",
+    "logiclegends"
+  ],
+  "author": "aman bhardwaj",
+  "license": "ISC"
+}
