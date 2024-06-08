@@ -21,22 +21,34 @@ import mongoose from "mongoose";
 import { DB_NAME } from "./constants.js";
 import connectDB from "./db/index.js";  // Ensure .js extension
 import dotenv from "dotenv";
-import cors from 'cors';
-import express from 'express';
+// import cors from 'cors';
+// import express from 'express';
 
-const app = express();
+// const app = express();
 
 dotenv.config({
     path: "./env"
 });
 
-app.use(cors());
+// app.use(cors());
 
-connectDB();
 
-app.listen(process.env.PORT, () => {
-    console.log(`App is listening on ${process.env.PORT}`);
-});
+
+// This is a asynchronous code. So, technically this returns a promise. .then  .catch
+connectDB(()=>{
+    app.listen(process.env.PORT || 3000, () => {
+        console.log(`App is listening on ${process.env.PORT}`);
+    });
+})
+.then()
+.catch((error)=>{
+    console.log("MongoDB connection failed !!!", error);
+})
+
+
+
+
+
 
 
 
